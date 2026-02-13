@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>login-db</title>
+    <script>
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      const path = location.pathname.substring('/login-db/'.length);
+      const redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      
+      if (redirect && redirect !== location.href) {
+        history.replaceState(null, null, redirect);
+      } else if (path && !path.includes('#')) {
+        const url = '/login-db/#' + path.split('/').map(component => 
+          encodeURIComponent(component)
+        ).join('/');
+        history.replaceState(null, null, url);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/login-db/src/main.jsx"></script>
+  </body>
+</html>
